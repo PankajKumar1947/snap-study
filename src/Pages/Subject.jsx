@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Fag from '../Component/Faqs/Fag'
-import Navbar from '../Component/Navbar'
+import Navbar from '../Component/Footer/Navbar'
 import Footer from '../Component/Footer/Footer'
 import Social from '../Component/Cards/Social'
 import { useParams } from 'react-router-dom'
@@ -14,11 +14,14 @@ const Subject = () => {
     const [error,setError]=useState(null);
 
     const {semId}=useParams();
+    const {branchId}=useParams();
+    console.log(branchId);
+    const url=process.env.REACT_APP_API_URL+branchId+`.json`;
 
     useEffect(()=>{
         const fetchData=async()=>{
             try{
-                const response=await fetch(process.env.REACT_APP_API_URL);
+                const response=await fetch(url);
                 const result= await response.json();
                 if(result[semId].length!==0)
                     setData(result[semId]);
@@ -34,7 +37,8 @@ const Subject = () => {
             }
         }
         fetchData();
-    },[semId,error])
+        window.scroll(0,0);
+    },[semId])
 
     if(loading){
         return <div className='text-white text-4xl text-center'>
@@ -46,15 +50,14 @@ const Subject = () => {
 
   return (
         <>
-            <Navbar/>
             <div className='text-white'>
                 {
                     loading ? <div><Spinner/></div> : 
                         !data ? <div>
                             <UploadedSoon/>
                         </div>:
-                    <div className='text-white pt-10 bg-gray-900 p-2 sm:p-4 '>
-                        <h1 className='text-5xl p-4 sm:p-6 ml-[10%] font-bold'>Subject Name</h1>
+                    <div className='text-white pt-2 sm:pt-10 bg-gray-900 p-2 sm:p-4 '>
+                        <h1 className='text-3xl sm:text-5xl p-4 sm:p-6 sm:ml-[10%] font-bold'>Subject Name</h1>
                         <div className='flex flex-col gap-3'>
                             {
                                 data && data.map((elem,ind)=>{
@@ -74,11 +77,6 @@ const Subject = () => {
                     </div>
                 }
             </div>
-            
-        
-            
-
-            <Footer/>
         </>
   )
 }

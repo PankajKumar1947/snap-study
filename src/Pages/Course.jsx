@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import Navbar from '../Component/Navbar'
+import Navbar from '../Component/Footer/Navbar'
 import Branch from '../Component/Cards/Branch'
 import Semester from '../Component/Cards/Semester'
 import Footer from '../Component/Footer/Footer'
-import { NavLink, useNavigate, useParams } from 'react-router-dom'
+import {useNavigate, useParams } from 'react-router-dom'
 
 const Course = () => {
     const [branchRoute,setBranchRoute]=useState("");
@@ -67,7 +67,6 @@ const Course = () => {
 
   return (
     <div>
-        <Navbar/>
         <div className='text-white bg-gray-900 py-6 px-[4%]'>
             <div>
                 <h1 className='text-4xl '>Select Your Branch</h1>
@@ -109,7 +108,6 @@ const Course = () => {
                 <br /><br />
             </div>
         </div>
-        <Footer/>
     </div>
   )
 }

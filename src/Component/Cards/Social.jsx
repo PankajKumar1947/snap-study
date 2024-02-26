@@ -7,8 +7,8 @@ import { IoLogoDiscord } from "react-icons/io5";
 
 const Social = () => {
   return (
-    <div className=' flex justify-center items-center gap-4 '>
-        <div className=' p-2 text-4xl flex gap-4'>
+    <div className=' grid justify-center items-center  '>
+        <div className=' p-2 text-2xl sm:text-4xl grid grid-cols-5 gap-2 sm:gap-4'>
             <div className='flex flex-col gap-1 items-center cursor-pointer hover:text-gray-500'>
                 <SiFacebook/>
                 <p className='text-sm'>Facebook</p>

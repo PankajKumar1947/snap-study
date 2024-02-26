@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import doubt from "../../Assets/doubt.jpg"
 
 const Contact = () => {
+    useEffect(()=>{
+        window.scroll(0,0);
+    },[])
   return (
     <>
     <h1 className='text-4xl ml-[10%] text-white mt-10'>Have any Doubt ?</h1>
-    <div className='max-w-[90%] flex justify-center items-center gap-5 mx-auto  text-white'>
+    <div className='max-w-[90%] flex justify-center items-center gap-5 mx-auto pb-10  text-white'>
         {/* left */}
         <div className='w-[40%] hidden sm:flex justify-center items-center  mt-8 '>
             <img src={doubt} alt='' className='h-[450px] rounded-3xl'/>
@@ -37,7 +40,7 @@ const Contact = () => {
                     <textarea name="message" id='message' placeholder='Messages....' className='text-gray-400 outline-none bg-transparent border-b-2'/>
                 </div>
                 <div className='w-full '>
-                    <button className='bg-black text-white py-3 px-6 rounded-full text-xl  '>Send</button>
+                    <button className='bg-black text-white hover:bg-white hover:text-black duration-200 py-3 px-6 rounded-full text-xl  '>Send</button>
                 </div>
                 
                

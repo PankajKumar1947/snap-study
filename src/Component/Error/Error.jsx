@@ -1,13 +1,12 @@
 import React from 'react'
 import './Error.css'
-import Navbar from '../Navbar'
+import Navbar from '../Footer/Navbar'
 import Footer from '../Footer/Footer'
 import { NavLink } from 'react-router-dom'
 
 const Error = () => {
   return (
     <>
-    <Navbar/>
     <div className='text-center mt-5'>
         <NavLink to={"/"}
         className={"bg-white px-5 py-2 rounded-full text-center "}
@@ -142,7 +141,6 @@ const Error = () => {
     </g>
     </svg>
     </div>
-    <Footer/>
     </>
   )
 }

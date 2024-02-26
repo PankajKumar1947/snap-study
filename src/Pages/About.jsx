@@ -1,20 +1,18 @@
-import React from 'react'
-import Navbar from '../Component/Navbar'
+import React, {useEffect} from 'react'
 import Products from '../Component/Product/Products'
 import Team from '../Component/Team/Team'
-import Footer from '../Component/Footer/Footer'
 import AboutDetails from '../Component/About/AboutDetails'
 
 const About = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
-        <Navbar/>
         <AboutDetails/>
         <Products/>
         {/* Products need to be modified */}
         <Team/>
-        
-        <Footer/>
     </div>
   )
 }

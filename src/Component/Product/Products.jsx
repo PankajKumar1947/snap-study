@@ -11,17 +11,17 @@ const Products = () => {
         },
         {
             route:"playlist",
-            title:"Chapterwise Playlist",
+            title:"Chapterwise Youtube Playlist",
             desc:"Get all the top most lecture of Your Subject which will help you to boost your prepartion."
         },
        {
             route:"organiser",
-            title:"Chapterwise Playlist",
+            title:"Get the latest Orgniser",
             desc:"Get all the top most lecture of Your Subject which will help you to boost your prepartion."
         },
         {
             route:"pyq",
-            title:"Chapterwise Playlist",
+            title:"Yearwise Subject PYQ",
             desc:"Get all the top most lecture of Your Subject which will help you to boost your prepartion."
         },
     ]
