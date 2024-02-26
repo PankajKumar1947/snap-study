@@ -26,16 +26,16 @@ const Products = () => {
         },
     ]
   return (
-    <div className='text-white flex flex-wrap justify-between items-center py-4 md:my-8  '>
+    <div className='text-white grid md:grid-cols-2 justify-between items-center py-4 mx-2 sm:mx-8 md:my-8  '>
         {/* left */}
-        <div className='w-full md:w-[50%] sm:p-4 text-center'>
+        <div className='sm:p-4 text-center'>
             <h1 className='text-2xl md:text-4xl text-center my-1 font-bold'>Our Products</h1>
             <p className='text-center p-2 sm:p-5 text-lg font-thin'> ​This is the space to introduce the Product section and showcase the types of products available. </p>
             <button className="hidden sm:block mx-auto px-3 py-2 sm:px-6 sm:py-3 rounded-full text-gray-800 bg-white hover:bg-gray-400 duration-200">Read More</button>
             
         </div>
         {/* right */}
-        <div className='flex gap-4 mt-2 w-full items-center justify-center md:w-[50%] flex-wrap'>
+        <div className='grid lg:grid-cols-2 mx-2 gap-4 mt-2 items-center justify-center flex-wrap'>
             {
                 prouductData.map((elem,ind)=>{
                     return (

@@ -4,6 +4,8 @@ import Navbar from '../Component/Navbar'
 import Footer from '../Component/Footer/Footer'
 import Social from '../Component/Cards/Social'
 import { useParams } from 'react-router-dom'
+import UploadedSoon from '../Component/Error/UploadedSoon'
+import Spinner from '../Component/Error/Spinner'
 
 const Subject = () => {
     //fetch the data
@@ -32,12 +34,12 @@ const Subject = () => {
             }
         }
         fetchData();
-    },[semId])
+    },[semId,error])
 
     if(loading){
         return <div className='text-white text-4xl text-center'>
             <Navbar/>
-            Loading....
+                <Spinner/>
             <Footer/>
         </div>
     }
@@ -47,8 +49,10 @@ const Subject = () => {
             <Navbar/>
             <div className='text-white'>
                 {
-                    loading ? <div>Loading....</div> : 
-                        !data ? <div>Data wil be uploaded soon</div>:
+                    loading ? <div><Spinner/></div> : 
+                        !data ? <div>
+                            <UploadedSoon/>
+                        </div>:
                     <div className='text-white pt-10 bg-gray-900 p-2 sm:p-4 '>
                         <h1 className='text-5xl p-4 sm:p-6 ml-[10%] font-bold'>Subject Name</h1>
                         <div className='flex flex-col gap-3'>

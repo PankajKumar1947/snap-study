@@ -29,7 +29,7 @@ const Team = () => {
   return (
     <div className='text-white mt-14 bg-gray-900 flex justify-center flex-col items-center'>
         <h1 className='text-center text-4xl font-semibold pt-8'>Our Team Member</h1>
-        <div className='my-10 mx-[8%] flex flex-wrap gap-7 justify-between items-center'>
+        <div className='my-10 mx-[8%] flex flex-wrap gap-7 justify-center items-center'>
             {
                 contributor.map((elem,ind)=>{
                     return (

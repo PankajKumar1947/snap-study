@@ -27,9 +27,9 @@ const Footer = () => {
 
       <br />
       <br /><br />
-      <div className='text-6xl flex gap-2 items-center' >
+      <div className='text-2xl md:text-6xl flex gap-2 items-center' >
         <h1 >​info@mysite.com</h1>
-        <div className='text-8xl'>
+        <div className='text-4xl md:text-8xl'>
           <GoArrowDownRight/>
         </div>    
       </div>

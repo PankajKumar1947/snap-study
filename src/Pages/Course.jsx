@@ -71,7 +71,7 @@ const Course = () => {
         <div className='text-white bg-gray-900 py-6 px-[4%]'>
             <div>
                 <h1 className='text-4xl '>Select Your Branch</h1>
-                <div className='my-5 flex gap-10 flex-wrap'>
+                <div className='my-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-4 justify-center '>
                     {
                         branchName.map((elem,ind)=>{
                             return (
@@ -89,7 +89,7 @@ const Course = () => {
             {/* semeseter */}
             <div className='w-full'>
                 <h1 className='text-4xl '>Select Your Semester</h1>
-                <div className='my-5 flex gap-10 flex-wrap'>
+                <div className='my-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-10 justify-center flex-wrap'>
                     {
                         branchName.map((elem,ind)=>{
                             return (

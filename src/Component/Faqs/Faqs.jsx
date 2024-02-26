@@ -22,7 +22,7 @@ const Faqs = () => {
     ]
   return (
     <div className='text-white mt-10 bg-gray-900 p-2 sm:p-4 '>
-        <h1 className='text-5xl p-4 sm:p-6 ml-[10%] font-bold'>FAQs</h1>
+        <h1 className='text-5xl p-4 sm:p-6 sm:ml-[10%] font-bold'>FAQs</h1>
         <div className='flex flex-col gap-3'>
             {
                 faqs.map((elem,ind)=>{
