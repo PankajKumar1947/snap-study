@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Fag from '../Component/Faqs/Fag'
-import Navbar from '../Component/Footer/Navbar'
-import Footer from '../Component/Footer/Footer'
 import Social from '../Component/Cards/Social'
 import { useParams } from 'react-router-dom'
 import UploadedSoon from '../Component/Error/UploadedSoon'
@@ -42,9 +40,7 @@ const Subject = () => {
 
     if(loading){
         return <div className='text-white text-4xl text-center'>
-            <Navbar/>
-                <Spinner/>
-            <Footer/>
+            <Spinner/>
         </div>
     }
 

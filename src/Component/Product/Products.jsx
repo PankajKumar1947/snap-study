@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ProductCard from './ProductCard'
 import { NavLink } from 'react-router-dom'
 
@@ -25,6 +25,10 @@ const Products = () => {
             desc:"Get all the top most lecture of Your Subject which will help you to boost your prepartion."
         },
     ]
+
+    useEffect(()=>{
+        window.scroll(0,0);
+    },[])
   return (
     <div className='text-white grid md:grid-cols-2 justify-between items-center py-4 mx-2 sm:mx-8 md:my-8  '>
         {/* left */}

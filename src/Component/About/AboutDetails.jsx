@@ -1,5 +1,6 @@
 import React from 'react'
-import ResponsiveImage from "../../Assets/vision.jpg";
+import vision1 from "../../Assets/vision.jpg";
+import vision2 from "../../Assets/vision2.jpg"
 
 const AboutDetails = () => {
   return (
@@ -20,7 +21,7 @@ const AboutDetails = () => {
                 </div>
                 {/* right */}
                 <div className="md:w-1/3 mb-4 lg:mb-0 rounded-xl overflow-hidden">
-                    <img src={ResponsiveImage} alt="" />
+                    <img src={vision1} alt="" />
                 </div>
             </div>
             
@@ -32,7 +33,7 @@ const AboutDetails = () => {
                 <div className="container mx-auto flex flex-col justify-center items-center mt-10">
                     <div className="flex flex-col lg:flex-row items-center lg:items-start">
                         <div className="md:w-1/3 mb-4 lg:mb-0 rounded-xl overflow-hidden">
-                            <img src={ResponsiveImage} alt="" />
+                            <img src={vision2} alt="" />
                         </div>
                     <div className="lg:w-1/2 lg:pl-8 pt-4 flex flex-col gap-5">
                         <p className="t leading-relaxed">

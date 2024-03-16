@@ -1,12 +1,19 @@
-import React, { useState } from 'react'
-import Navbar from '../Component/Footer/Navbar'
+import React, { useEffect, useState } from 'react'
 import Branch from '../Component/Cards/Branch'
 import Semester from '../Component/Cards/Semester'
-import Footer from '../Component/Footer/Footer'
 import {useNavigate, useParams } from 'react-router-dom'
+
+//importing image
+import cse_img from "../Assets/cse_img.jpg"
+import it_img from "../Assets/it_img.jpg"
+import ece_img from "../Assets/ece_img.jpg"
+import aiml_img from "../Assets/aiml_img.jpg"
+import me_img from "../Assets/mech_img.jpg"
+import civil_img from "../Assets/civil_img.jpg"
 
 const Course = () => {
     const [branchRoute,setBranchRoute]=useState("");
+    const [selectedBranch,setSelectedBranch]=useState("");
     const {id}=useParams();
     const navigate=useNavigate();
     const [isNavigating, setNavigating] = useState(false);
@@ -14,35 +21,27 @@ const Course = () => {
     const branchName=[
         {
             name:"CSE",
-            image:"",
+            image:cse_img,
         },
         {
             name:"IT",
-            image:"",
+            image:it_img,
         },
         {
             name:"ECE",
-            image:"",
+            image:ece_img,
         },
         {
             name:"AIML",
-            image:"",
+            image:aiml_img,
         },
         {
             name:"ME",
-            image:"",
+            image:me_img,
         },
         {
-            name:"CSE",
-            image:"",
-        },
-        {
-            name:"CSE",
-            image:"",
-        },
-        {
-            name:"CSE",
-            image:"",
+            name:"CIVIL",
+            image:civil_img
         },
     ]
 
@@ -60,10 +59,15 @@ const Course = () => {
     const selectBranch=(elem)=>{
         if(!isNavigating){
             setBranchRoute(`/choice/${id}/${elem.name.toLowerCase()}`);
+            setSelectedBranch(elem.name.toUpperCase());
             setNavigating(false);
-        }
-            
+            window.scrollTo(0,500);
+        }   
     }
+
+    useEffect(()=>{
+        window.scrollTo(0,0);
+    },[])
 
   return (
     <div>
@@ -74,8 +78,8 @@ const Course = () => {
                     {
                         branchName.map((elem,ind)=>{
                             return (
-                                <div key={ind} onClick={()=>selectBranch(elem)}>
-                                    <Branch elem={elem}/>
+                                <div key={ind} onClick={()=>selectBranch(elem)} className={`${elem.name===selectedBranch ? " opacity-50 " : ""} `}>
+                                    <Branch elem={elem} selectedBranch={selectedBranch}/>
                                 </div>
                             )
                         })

@@ -1,12 +1,15 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import logo from "../../Assets/logo.png"
 
 const Navbar = () => {
   return (
     <div>
         <nav className="bg-gray-800 p-2 sm:p-4 border-b-[1px]">
             <div className="container mx-auto flex justify-between items-center">
-                <div className="text-white text-xl font-bold">Your Logo</div>
+                <div className="text-white text-xl font-bold">
+                  <img src={logo} alt="" className='w-[50x] h-[30px] rounded-full' />
+                </div>
                 <div className="hidden md:flex space-x-4 text-white">
                   <NavLink 
                   className={({ isActive }) => isActive ? "text-red-500 underline underline-offset-2" : "text-white hover:text-red-500"}

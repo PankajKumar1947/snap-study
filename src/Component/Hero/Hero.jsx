@@ -2,6 +2,9 @@ import React from 'react'
 import bgVideo from "../../Assets/bg-video.mp4"
 
 const Hero = () => {
+  const readnowHandler=()=>{
+    window.scrollTo(0,600);
+  }
   return (
     <div className="relative text-white">
       {/* Background Video */}
@@ -22,7 +25,9 @@ const Hero = () => {
       <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
         <h2 className='text-xl my-2'>Hey there</h2>
         <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-6xl font-bold mb-4">Organised with ease</h1>
-        <button className="bg-gray-800 text-white px-3 py-2 sm:px-6 sm:py-3 rounded-full hover:text-gray-800 hover:bg-white duration-200">Read Now</button>
+        <button 
+        onClick={readnowHandler}
+        className="bg-gray-800 text-white px-3 py-2 sm:px-6 sm:py-3 rounded-full hover:text-gray-800 hover:bg-white duration-200">Read Now</button>
       </div>
     </div>
   )

@@ -7,6 +7,7 @@ import Error from "./Component/Error/Error";
 import Layout from "./Component/Layout";
 import Contact from "./Component/Contact/Contact";
 import Services from "./Pages/Services";
+import DonateDetails from "./Component/Donate/DonateDetails";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               <Route path="/about" element={<About/>}/>
               <Route path="/contact" element={<Contact/>}/>
               <Route path="/services" element={<Services/>}/>
+              <Route path="/donate" element={<DonateDetails/>}/>
               <Route path="/choice/:id" element={<Course/>}/>
               <Route path="/choice/:id/:branchId/:semId" element={<Subject />} />
               <Route path="*" element={<Error/>}/>
