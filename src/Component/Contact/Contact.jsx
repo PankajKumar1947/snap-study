@@ -1,7 +1,39 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import doubt from "../../Assets/doubt.jpg"
 
 const Contact = () => {
+    const [formData,setFormData]=useState({
+        firstname:"",
+        lastname:"",
+        email:"",
+        phone:"",
+        message:"",
+    });
+
+    const handleChange=(e)=>{
+        const {name,value}=e.target;
+        setFormData((prev)=>({
+            ...prev,
+            [name]:value
+        }))
+    }
+
+    const submitHandler=(e)=>{
+        e.preventDefault();
+        if(!formData.firstname || !formData.lastname || ! formData.email || formData.phone.length!==10 || !formData.message){
+            alert("Please fill out all details carefully");
+            return ;
+        }
+        console.log("form data = > ",formData);
+        setFormData({
+            firstname:"",
+            lastname:"",
+            email:"",
+            phone:"",
+            message:"",
+        })
+    }
+
     useEffect(()=>{
         window.scroll(0,0);
     },[])
@@ -20,27 +52,45 @@ const Contact = () => {
                 <div className='flex justify-between'>
                     <div className='flex flex-col w-[40%] gap-2'>
                         <label htmlFor='firstname'>First Name</label>
-                        <input name='firstname' id='firstname' type='text' placeholder='First Name' className='text-gray-400 outline-none bg-transparent border-b-2'/>
+                        <input 
+                        value={formData.firstname}
+                        onChange={handleChange}
+                        name='firstname' id='firstname' type='text' placeholder='First Name'
+                        className='text-gray-400 outline-none bg-transparent border-b-2'/>
                     </div>
                     <div className='flex flex-col w-[40%] gap-2'>
                         <label htmlFor='lastname'>Last Name</label>
-                        <input name='lastname' id='lastname' type='text' placeholder='Last Name' className='text-gray-400 outline-none bg-transparent border-b-2'/>
+                        <input 
+                        value={formData.lastname}
+                        onChange={handleChange}
+                        name='lastname' id='lastname' type='text' placeholder='Last Name' className='text-gray-400 outline-none bg-transparent border-b-2'/>
                     </div>
                 </div>
                 <div className='mt-4 flex flex-col w-[100%] gap-2'>
                     <label htmlFor='email'>Email</label>
-                    <input name='email' id='email' type='email' placeholder='Email' className='text-gray-400 outline-none bg-transparent border-b-2'/>
+                    <input 
+                    onChange={handleChange}
+                    value={formData.email}
+                    name='email' id='email' type='email' placeholder='Email' className='text-gray-400 outline-none bg-transparent border-b-2'/>
                 </div>
                 <div className='mt-4 flex flex-col w-[100%] gap-2'>
                     <label htmlFor='phone'>Phone</label>
-                    <input name='phone' id='phone' type='number' placeholder='Phone' className='text-gray-400 outline-none bg-transparent border-b-2'/>
+                    <input 
+                    value={formData.phone}
+                    onChange={handleChange}
+                    name='phone' id='phone' type='number' placeholder='Phone' className='text-gray-400 outline-none bg-transparent border-b-2'/>
                 </div>
                 <div className='mt-4 flex flex-col w-[100%]'>
                     <label htmlFor='message'>Message</label>
-                    <textarea name="message" id='message' placeholder='Messages....' className='text-gray-400 outline-none bg-transparent border-b-2'/>
+                    <textarea 
+                    value={formData.message}
+                    onChange={handleChange}
+                    name="message" id='message' placeholder='Messages....' className='text-gray-400 outline-none bg-transparent border-b-2'/>
                 </div>
                 <div className='w-full '>
-                    <button className='bg-black text-white hover:bg-white hover:text-black duration-200 py-3 px-6 rounded-full text-xl  '>Send</button>
+                    <button 
+                    onClick={submitHandler}
+                    className='bg-black text-white hover:bg-white hover:text-black duration-200 py-3 px-6 rounded-full text-xl  '>Send</button>
                 </div>
                 
                

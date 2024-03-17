@@ -6,8 +6,8 @@ const Spinner = () => {
     <>
       
     
-    <div class="w-full min-h-screen flex justify-center items-center">
-    <span class="loader"></span>
+    <div className="w-full min-h-screen flex justify-center items-center">
+    <span className="loader"></span>
    </div>
 
     </>

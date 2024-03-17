@@ -21,9 +21,6 @@ const News = () => {
         getData();
         
     },[])
-    useEffect(()=>{
-        console.log(news);
-    },[news])
 
     if(loading){
         return <Spinner/>
@@ -43,6 +40,7 @@ const News = () => {
                     
                         return (
                             <a 
+                            key={eachNews.id}
                             href={eachNews.file_path}
                             className='bg-gray-500 p-2 px-4 rounded-full flex-1 hover:bg-gray-300 hover:text-black text-xs sm:text-lg'>
                                 <span className='text-black font-semibold'>{eachNews.notice_date}</span> : {truncatedTitle}
