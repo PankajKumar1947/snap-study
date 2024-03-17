@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 const Fag = ({elem}) => {
     const [click,setClick]=useState(false);
     const {id}=useParams();
-    console.log(id)
+    //console.log(id)
   return (
     <div>
         <div className=' sm:max-w-[70%] mx-auto '>

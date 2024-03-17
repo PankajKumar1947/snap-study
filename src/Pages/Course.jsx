@@ -10,6 +10,7 @@ import ece_img from "../Assets/ece_img.jpg"
 import aiml_img from "../Assets/aiml_img.jpg"
 import me_img from "../Assets/mech_img.jpg"
 import civil_img from "../Assets/civil_img.jpg"
+import News from '../Component/News/News'
 
 const Course = () => {
     const [branchRoute,setBranchRoute]=useState("");
@@ -68,6 +69,9 @@ const Course = () => {
     useEffect(()=>{
         window.scrollTo(0,0);
     },[])
+
+    if(id==="news")
+        return <News/>
 
   return (
     <div>
