@@ -5,7 +5,7 @@ import logo from "../../Assets/logo.png"
 const Navbar = () => {
   return (
     <div>
-        <nav className="bg-gray-800 p-2 sm:p-4 border-b-[1px]">
+        <nav className="bg-gradient-to-b from-gray-800 to-gray-700 p-2 sm:p-4 border-b-[1px]">
             <div className="container mx-auto flex justify-between items-center">
                 <div className="text-white text-xl font-bold">
                   <img src={logo} alt="" className='w-[50x] h-[30px] rounded-full' />

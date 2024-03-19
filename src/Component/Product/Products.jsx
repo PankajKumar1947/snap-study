@@ -30,7 +30,7 @@ const Products = () => {
         window.scroll(0,0);
     },[])
   return (
-    <div className='text-white grid md:grid-cols-2 justify-between items-center py-4 mx-2 sm:mx-8 md:my-8  '>
+    <div className='text-white grid md:grid-cols-2 bg-gradient-to-r from-gray-600 to-gray-800 justify-between items-center py-4 px-2 sm:px-8 md:py-14  '>
         {/* left */}
         <div className='sm:p-4 text-center'>
             <h1 className='text-2xl md:text-4xl text-center my-1 font-bold'>Our Products</h1>

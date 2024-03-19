@@ -27,7 +27,7 @@ const News = () => {
     }
   return (
     <div className=''>
-        <div className='w-[96%] md:w-[80%] mx-auto border-2 bg-gray-700 m-4 text-white rounded-2xl'>
+        <div className='w-[96%] md:w-[80%] mx-auto border-2 bg-gradient-to-r from-gray-600 to-gray-900 m-4 text-white rounded-2xl'>
             <h1 className='text-center text-3xl font-semibold m-4'>Latest Notifications</h1>
             <hr />
 

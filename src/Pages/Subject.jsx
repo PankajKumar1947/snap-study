@@ -52,7 +52,7 @@ const Subject = () => {
                         !data ? <div>
                             <UploadedSoon/>
                         </div>:
-                    <div className='text-white pt-2 sm:pt-10 bg-gray-900 p-2 sm:p-4 '>
+                    <div className='text-white pt-2 sm:pt-10 bg-gradient-to-b from-gray-700 to-gray-900 p-2 sm:p-4 '>
                         <h1 className='text-3xl sm:text-5xl p-4 sm:p-6 sm:ml-[10%] font-bold'>Subject Name</h1>
                         <div className='flex flex-col gap-3'>
                             {

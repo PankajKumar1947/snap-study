@@ -75,7 +75,7 @@ const Course = () => {
 
   return (
     <div>
-        <div className='text-white bg-gray-900 py-6 px-[4%]'>
+        <div className='text-white bg-gradient-to-t from-gray-800 to-gray-600 py-6 px-[4%]'>
             <div>
                 <h1 className='text-4xl '>Select Your Branch</h1>
                 <div className='my-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-4 justify-center '>

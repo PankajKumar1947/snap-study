@@ -3,7 +3,7 @@ import { GoArrowDownRight } from "react-icons/go";
 
 const Footer = () => {
   return (
-    <div className='px-[5%] bg-gray-600  text-white'>
+    <div className='px-[5%] bg-gradient-to-b from-gray-700 to-gray-900  text-white'>
       <h1 className='text-3xl font-semibold pt-10'>Your Company Name</h1>
 
       <div className='flex justify-between mt-5'>
