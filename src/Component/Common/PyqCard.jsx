@@ -7,10 +7,6 @@ const PyqCard = ({pyqData}) => {
         return [year, link];
     });
 
-
-    if (!pyqData || !Array.isArray(pyqData))
-        return <div>No data available</div>;
-
   return (
     <div className='flex flex-wrap gap-4'>
        {
