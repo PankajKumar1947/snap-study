@@ -1,5 +1,5 @@
 import React from 'react'
-import bgVideo from "../../Assets/bg-video.mp4"
+import bgVideo from "../../Assets/vid4.mp4"
 
 const Hero = () => {
   const readnowHandler=()=>{
