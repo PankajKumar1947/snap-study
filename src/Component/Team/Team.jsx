@@ -35,14 +35,14 @@ const Team = () => {
                     return (
                         <div
                         key={ind}
-                        className='border-[1px] rounded-md p-4 overflow-hidden'>
+                        className='border-[1px] rounded-md p-4 overflow-hidden bg-zinc-900'>
                             <div className='w-[250px] h-[300px] rounded-tl-[40%] rounded-br-[50%]  rounded-xl overflow-hidden'>
                                 <img src={elem.img} alt="" />
                             </div>
                             <h2 className='text-center mt-2'>{elem.name}</h2>
                             <div className='flex justify-evenly mt-2'>
-                                <button className='bg-white text-gray-900 hover:bg-gray-600 hover:text-white px-2 py-1 rounded-3xl'>Github</button>
-                                <button className='bg-white text-gray-900 hover:bg-gray-600 hover:text-white px-2 py-1 rounded-3xl'>LinkedIn</button>
+                                <button className='  bg-transparent hover:border-[1px] overflow-hidden hover:text-white px-2 py-1 rounded-3xl'>Github</button>
+                                <button className='  bg-transparent hover:border-[1px] overflow-hidden hover:text-white px-2 py-1 rounded-3xl'>LinkedIn</button>
                             </div>
                         </div>
                     )

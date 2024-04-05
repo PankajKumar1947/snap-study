@@ -2,7 +2,31 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import logo from "../../Assets/logo.png"
 
+
 const Navbar = () => {
+  const navMenu=[
+    {
+      name:"Home",
+      route:"/"
+    },
+    {
+      name:"Notice",
+      route:"choice/news"
+    },
+    {
+      name:"Organiser",
+      route:"choice/organiser"
+    },
+    {
+      name:"Pyq",
+      route:"choice/pyq"
+    },
+    {
+      name:"Lectures",
+      route:"choice/playlist"
+    }
+  ]
+  
   return (
     <div>
         <nav className="bg-gradient-to-b from-gray-800 to-gray-700 p-2 sm:p-4 border-b-[1px]">
@@ -10,29 +34,20 @@ const Navbar = () => {
                 <div className="text-white text-xl font-bold">
                   <img src={logo} alt="" className='w-[50x] h-[30px] rounded-full' />
                 </div>
-                <div className="hidden md:flex space-x-4 text-white">
-                  <NavLink 
-                  className={({ isActive }) => isActive ? "text-red-500 underline underline-offset-2" : "text-white hover:text-red-500"}
-                  to={"/"} >
-                    Home
-                  </NavLink>
-                  <NavLink 
-                  className={({ isActive }) => isActive ? "text-red-500 underline underline-offset-2" : "text-white hover:text-red-500"}
-                  to={"/about"} >
-                    About
-                  </NavLink>
-                  <NavLink 
-                  className={({ isActive }) => isActive ? "text-red-500 underline underline-offset-2" : "text-white hover:text-red-500"}
-                  to={"/services"} >
-                    Services
-                  </NavLink>
-                  <NavLink 
-                  className={({ isActive }) => isActive ? "text-red-500 underline underline-offset-2" : "text-white hover:text-red-500"}
-                  to={"/contact"} >
-                    Contact
-                  </NavLink>
+                <div className="hidden md:flex space-x-4 text-white items-center">
+                  {
+                    navMenu.map((menu)=>{
+                      return (
+                        <NavLink 
+                          className={({ isActive }) => isActive ? "bg-indigo-500 h-full px-5 py-1 rounded-full " : "text-white"}
+                          to={menu.route} >
+                            {menu.name}
+                          </NavLink>
+                      )
+                    })
+                  }
                 </div>
-                <div className="md:hidden"> {/* Show on small screens */}
+                <div className="md:hidden">
                 <button className="text-white focus:outline-none">
                     <svg
                     className="h-6 w-6"
