@@ -36,11 +36,13 @@ const Navbar = () => {
                 </div>
                 <div className="hidden md:flex space-x-4 text-white items-center">
                   {
-                    navMenu.map((menu)=>{
+                    navMenu.map((menu,ind)=>{
                       return (
                         <NavLink 
                           className={({ isActive }) => isActive ? "bg-indigo-500 h-full px-5 py-1 rounded-full " : "text-white"}
-                          to={menu.route} >
+                          to={menu.route}
+                          key={ind}
+                          >
                             {menu.name}
                           </NavLink>
                       )
