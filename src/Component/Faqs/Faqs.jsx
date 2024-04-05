@@ -6,19 +6,19 @@ const Faqs = () => {
         {
             Ques:`
             What subjects does this website cover? `,
-            Ans:`Here you will get all the subjects that are present in your stream. According to the MAKAUT university.`
+            Ans:`Our website provides study resources for a comprehensive range of subjects relevant to your MAKAUT University stream. Be sure to explore the "Subjects" section to find the specific topics you need`
         },
         {
             Ques:`Are the previous year question papers downloadable or can I only view them online? `,
-            Ans:`You can download the papers using google drive as well as can view them online `
+            Ans:` We offer flexibility in accessing past exam papers. You can download them for offline study using Google Drive or conveniently view them directly on our website.`
         },
         {
             Ques:` Do you offer any answer keys or explanations for the previous year questions?`,
-            Ans:`Till this moment we are working on that feature it will be uploaded soon but most of the question's solutions are already available in the organiser. `
+            Ans:` We understand the importance of answer keys and explanations for effective exam preparation. While we are currently developing this feature and it will be available soon, you'll find solutions for many questions already included within the downloadable subject organizers`
         },
         {
             Ques:` Is this website free to use? `,
-            Ans:`No its not for free. You have to invest your time here. `
+            Ans:`Access to our website's resources requires a time investment from you, allowing you to reap the benefits of focused exam preparation.`
         },
     ]
   return (

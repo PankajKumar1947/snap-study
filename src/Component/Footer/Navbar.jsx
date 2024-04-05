@@ -18,7 +18,7 @@ const Navbar = () => {
       route:"choice/organiser"
     },
     {
-      name:"Pyq",
+      name:"PYQ",
       route:"choice/pyq"
     },
     {
