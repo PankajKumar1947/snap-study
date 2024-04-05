@@ -13,7 +13,7 @@ const Fag = ({elem}) => {
             <a href={elem[id]}>
                 <div 
                 onClick={()=>setClick(prev=>!prev)}
-                className='text-xl sm:text-4xl flex justify-between items-center group cursor-pointer rounded-full bg-gray-600 hover:bg-gray-700 p-6 px-8'>
+                className='text-sm sm:text-xl flex justify-between items-center group cursor-pointer rounded-full bg-gray-600 hover:bg-gray-700 p-6 px-8'>
                     <h2 className='group-hover:ml-4 duration-300'>{elem.subject? elem.subject :elem.Ques}</h2>
                     <div className='mr-5 group-hover:rotate-45 duration-300 text-5xl'>
                         <BsArrowRightCircle/>
