@@ -29,10 +29,10 @@ const Navbar = () => {
   
   return (
     <div>
-        <nav className="bg-gradient-to-b from-gray-800 to-gray-700 p-2 sm:p-4 border-b-[1px]">
+        <nav className="bg-gradient-to-b from-gray-800 to-gray-700 p-2  border-b-[1px]">
             <div className="container mx-auto flex justify-between items-center">
-                <div className="text-white text-xl font-bold">
-                  <img src={logo} alt="" className='w-[50x] h-[30px] rounded-full' />
+                <div className="">
+                  <img src={logo} alt="" className=' rounded-md h-[40px] sm:h-[50px] cursor-pointer' />
                 </div>
                 <div className="hidden md:flex space-x-4 text-white items-center">
                   {
