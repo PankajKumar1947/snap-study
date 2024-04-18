@@ -1,14 +1,21 @@
 import React from 'react'
 import { GoArrowDownRight } from "react-icons/go";
+import logo from '../../Assets/logo.png'
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
   return (
     <div className='px-[5%] bg-gradient-to-b from-gray-700 to-gray-900  text-white'>
-      <h1 className='text-3xl font-semibold pt-10'>Your Company Name</h1>
+      <div className='pt-10 flex justify-between'>
+        <h1 className='text-3xl font-semibold '>Snap-Study</h1>
+        <img src={logo} alt="snap-study" className=' rounded-md h-[40px] sm:h-[50px] cursor-pointer' />
+      </div>
 
       <div className='flex justify-between mt-5'>
         <div>
-          <a href="home">Home</a>
+          <NavLink to={"/"}>Home</NavLink>
+          <br />
+          <NavLink to={"/about"}>About</NavLink>
         </div>
         <div className='flex flex-col gap-2'>
           <a href="fb">Facebook</a>
@@ -28,14 +35,14 @@ const Footer = () => {
       <br />
       <br /><br />
       <div className='text-2xl md:text-6xl flex gap-2 items-center' >
-        <h1 >​info@mysite.com</h1>
+        <a href='https://snapstudy.site' className='hover:text-gray-400' >snapstudy.site</a>
         <div className='text-4xl md:text-8xl'>
           <GoArrowDownRight/>
         </div>    
       </div>
 
       <hr />
-      <p className='my-3'>​© 2035 by Name of Site. Created by Pankaj Kumar.</p>
+      <p className='my-3'>​© 2024 by Snap-Study. Created by <a className='text-red-600' href="https://github.com/PankajKumar1947">Pankaj Kumar</a> .</p>
       <hr />
     </div>
   )

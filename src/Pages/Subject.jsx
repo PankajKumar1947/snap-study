@@ -13,7 +13,7 @@ const Subject = () => {
 
     const {semId}=useParams();
     const {branchId}=useParams();
-    console.log(branchId);
+   // console.log(branchId);
     const url=process.env.REACT_APP_API_URL+branchId+`.json`;
 
     useEffect(()=>{
@@ -23,7 +23,7 @@ const Subject = () => {
                 const result= await response.json();
                 if(result[semId].length!==0)
                     setData(result[semId]);
-                console.log(result[semId])
+                //console.log(result[semId])
             }
             catch(err){
                 setError(err);

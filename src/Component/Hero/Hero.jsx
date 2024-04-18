@@ -1,5 +1,5 @@
 import React from 'react'
-import bgVideo from "../../Assets/vid4.mp4"
+import bgVideo from "../../Assets/bg-video.mp4"
 
 const Hero = () => {
   const readnowHandler=()=>{
@@ -23,8 +23,8 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black opacity-50"></div>
 
       <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
-        <h2 className='text-xl my-2'>Hello Fellow Companion </h2>
-        <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-6xl font-bold mb-4">Follow me </h1>
+        <h2 className='text-xl my-2'>Get the latest makaut study material</h2>
+        <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-6xl font-bold mb-4">Organised with ease </h1>
         <button 
         onClick={readnowHandler}
         className="bg-gray-800 text-white px-3 py-2 sm:px-6 sm:py-3 rounded-full hover:text-gray-800 hover:bg-white duration-200">Read Now</button>

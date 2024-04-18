@@ -11,7 +11,6 @@ const About = () => {
     <div>
         <AboutDetails/>
         <Products/>
-        {/* Products need to be modified */}
         <Team/>
     </div>
   )

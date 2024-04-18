@@ -6,8 +6,8 @@ import Faqs from "../Component/Faqs/Faqs";
 import Hero from "../Component/Hero/Hero";
 import Newsletter from "../Component/Newsletter/Newsletter";
 import Products from "../Component/Product/Products";
-import Contributor from "../Component/Team/Contributor";
 import Team from "../Component/Team/Team";
+import Contributor from '../Component/Team/Contributor';
 
 const Home = () => {
   useEffect(()=>{
@@ -21,8 +21,12 @@ const Home = () => {
         <Donate/>
         <Faqs/>
         <Contact/>
-        <Team/>
-        <Contributor/>
+        <div className='grid sm:grid-cols-2 bg-gray-900'>
+          <Team/>
+          <Contributor/>
+        </div>
+      
+        
         <Newsletter/>
     </div>
   )

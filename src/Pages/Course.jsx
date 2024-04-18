@@ -45,6 +45,7 @@ const Course = () => {
             image:civil_img
         },
     ]
+    const sem=[1,2,3,4,5,6,7,8];
 
     const selectSem=(ind)=>{
         if(!branchRoute){
@@ -99,7 +100,7 @@ const Course = () => {
                 <h1 className='text-4xl '>Select Your Semester</h1>
                 <div className='my-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-10 justify-center flex-wrap'>
                     {
-                        branchName.map((elem,ind)=>{
+                        sem.map((elem,ind)=>{
                             return (
                                 <div key={ind}>
                                     <div 
