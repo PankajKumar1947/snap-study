@@ -7,17 +7,19 @@ const Footer = () => {
   return (
     <div className='px-[5%] bg-gradient-to-b from-gray-700 to-gray-900  text-white'>
       <div className='pt-10 flex justify-between'>
-        <h1 className='text-3xl font-semibold '>Snap-Study</h1>
-        <img src={logo} alt="snap-study" className=' rounded-md h-[40px] sm:h-[50px] cursor-pointer' />
+        <h1 className='text-xl sm:text-3xl font-semibold '>Snap-Study</h1>
+        <NavLink to={"/"}>
+          <img src={logo} alt="snap-study" className=' rounded-md h-[40px] sm:h-[50px] cursor-pointer' />
+        </NavLink>
       </div>
 
-      <div className='flex justify-between mt-5'>
+      <div className='flex justify-between mt-5 text-sm sm:text-base'>
         <div>
           <NavLink to={"/"}>Home</NavLink>
           <br />
           <NavLink to={"/about"}>About</NavLink>
         </div>
-        <div className='flex flex-col gap-2'>
+        <div className='flex flex-col gap-2 '>
           <a href="fb">Facebook</a>
           <a href="fb">LinkedIn</a>
           <a href="fb">Twitter</a>
@@ -42,7 +44,7 @@ const Footer = () => {
       </div>
 
       <hr />
-      <p className='my-3'>​© 2024 by Snap-Study. Created by <a className='text-red-600' href="https://github.com/PankajKumar1947">Pankaj Kumar</a> .</p>
+      <p className='my-3 text-xs'>​© 2024 by Snap-Study. Created by <a className='text-red-600' href="https://github.com/PankajKumar1947">Pankaj Kumar</a> .</p>
       <hr />
     </div>
   )

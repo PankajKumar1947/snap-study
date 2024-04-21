@@ -79,7 +79,7 @@ const Course = () => {
         <div className='text-white bg-gradient-to-t from-gray-800 to-gray-600 py-6 px-[4%]'>
             <h1 className='text-center text-2xl sm:text-3xl text-cyan-400 font-semibold'>Get Your <span>{id}</span> </h1>
             <div>
-                <h1 className='text-4xl '>Select Your Branch</h1>
+                <h1 className='text-xl sm:text-4xl '>Select Your Branch</h1>
                 <div className='my-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-4 justify-center '>
                     {
                         branchName.map((elem,ind)=>{
@@ -97,7 +97,7 @@ const Course = () => {
 
             {/* semeseter */}
             <div className='w-full'>
-                <h1 className='text-4xl '>Select Your Semester</h1>
+                <h1 className='text-xl sm:text-4xl '>Select Your Semester</h1>
                 <div className='my-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-10 justify-center flex-wrap'>
                     {
                         sem.map((elem,ind)=>{

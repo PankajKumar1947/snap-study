@@ -1,7 +1,5 @@
 import React from 'react'
 import './Error.css'
-import Navbar from '../Footer/Navbar'
-import Footer from '../Footer/Footer'
 import { NavLink } from 'react-router-dom'
 
 const Error = () => {

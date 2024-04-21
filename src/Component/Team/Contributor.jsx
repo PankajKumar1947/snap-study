@@ -23,7 +23,7 @@ const Contributor = () => {
 
   return (
     <div className='text-white mt-7 sm:mt-14 flex justify-center flex-col items-center '>
-        <h1 className='text-center text-4xl font-semibold pt-8'>Contributors</h1>
+        <h1 className='text-center text-2xl sm:text-4xl font-semibold pt-8'>Contributors</h1>
         <div className='my-10 mx-[8%] flex flex-wrap gap-7 justify-center items-center'>
             {
                 contributor.map((elem,ind)=>{

@@ -12,7 +12,7 @@ import DonateDetails from "./Component/Donate/DonateDetails";
 function App() {
   return (
     <>
-      <div className="font-poppins bg-gray-800">
+      <div className=" bg-gray-800 font-mont">
         <BrowserRouter>
           <Routes>
             <Route path="/" element={

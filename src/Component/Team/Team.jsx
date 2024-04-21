@@ -18,7 +18,7 @@ const Team = () => {
                 <div className='flex justify-evenly mt-2'>
                     <a 
                     href={githubProfile?.html_url}
-                    className='  bg-transparent border-[1px] hover:bg-white hover:text-black overflow-hidden  px-2 py-1 rounded-3xl'>Github</a>
+                    className='  bg-transparent border-[1px] hover:bg-white hover:text-black overflow-hidden  px-2 py-1  rounded-3xl'>Github</a>
                     <a 
                     href='https://www.linkedin.com/in/pankaj-kumar-5bbb44268/'
                     className='  bg-transparent border-[1px] hover:bg-white hover:text-black overflow-hidden  px-2 py-1 rounded-3xl'>LinkedIn</a>

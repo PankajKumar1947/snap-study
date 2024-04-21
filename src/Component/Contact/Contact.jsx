@@ -39,7 +39,7 @@ const Contact = () => {
     },[])
   return (
     <>
-    <h1 className='text-4xl ml-[10%]  text-white mt-10'>Have any Doubt ?</h1>
+    <h1 className='text-2xl sm:text-4xl ml-[10%]  text-white mt-10'>Have any Doubt ?</h1>
     <div className='max-w-[90%] flex justify-center items-center gap-5 mx-auto pb-10  text-white'>
         {/* left */}
         <div className='w-[40%] hidden sm:flex justify-center items-center  mt-8 '>
@@ -47,8 +47,7 @@ const Contact = () => {
         </div>
         {/* right */}
         <div className='w-full sm:w-[60%] '>
-            <h1 className='text-4xl text-center '>Contact Us</h1>
-            <form className='mt-6 border-[1px] p-4 py-6 sm:p-8 rounded-2xl flex flex-col gap-5 bg-gradient-to-r from-gray-600 to-gray-800 text-white'>
+            <form className='mt-6 border-[1px] p-4 py-6 sm:p-8 rounded-2xl flex flex-col gap-5 bg-gradient-to-r from-gray-600 to-gray-800 text-white text-sm sm:text-base'>
                 <div className='flex justify-between '>
                     <div className='flex flex-col w-[40%] gap-2'>
                         <label htmlFor='firstname'>First Name</label>

@@ -31,9 +31,9 @@ const Navbar = () => {
     <div>
         <nav className="bg-gradient-to-b from-gray-800 to-gray-700 p-2  border-b-[1px]">
             <div className="container mx-auto flex justify-between items-center">
-                <div className="">
+                <NavLink to={"/"} className="">
                   <img src={logo} alt="" className=' rounded-md h-[40px] sm:h-[50px] cursor-pointer' />
-                </div>
+                </NavLink>
                 <div className="hidden md:flex space-x-4 text-white items-center">
                   {
                     navMenu.map((menu,ind)=>{
