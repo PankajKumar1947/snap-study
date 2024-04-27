@@ -1,6 +1,6 @@
 import React from 'react'
-import vision1 from "../../Assets/aboutImage4.jpg";
-import vision2 from "../../Assets/aboutImage5.jpg"
+import vision1 from "../../Assets/snap-study.png";
+import vision2 from "../../Assets/vision.jpg"
 
 const AboutDetails = () => {
   return (
@@ -13,7 +13,6 @@ const AboutDetails = () => {
                     <div className=' p-2 rounded-lg hover:bg-black bg-gray-800'>
                         <h1 className='italic text-xl '>Our Inspiration: Recognizing a Student Need</h1>
                         <p className='text-gray-300 mt-2'>
-
                             Our journey began during our first year at university. We, like many new students, faced the challenge of efficiently navigating exam preparation resources. Locating relevant study materials and well-organized subject organizers proved to be a time-consuming and frustrating task. We often found ourselves searching through numerous websites, and even then, essential resources were scattered or unavailable for free.</p>
                     </div>
                     <div className=' p-2 rounded-lg hover:bg-black bg-gray-800'>
@@ -25,8 +24,8 @@ const AboutDetails = () => {
                     </div>
                 </div>
                 {/* right */}
-                <div className="flex-1 mb-4 lg:mb-0 rounded-xl overflow-hidden">
-                    <img src={vision1} alt="" />
+                <div className="flex-1 mb-4 lg:mb-0 rounded-xl overflow-hidden  ">
+                    <img src={vision1} alt="" className='sm:w-[35vw]' />
                 </div>
             </div>
             

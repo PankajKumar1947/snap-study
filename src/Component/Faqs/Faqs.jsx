@@ -1,5 +1,5 @@
 import React from 'react'
-import Fag from './Fag'
+import Fag from './Faq'
 
 const Faqs = () => {
     const faqs=[

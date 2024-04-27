@@ -1,5 +1,5 @@
 import React from 'react'
-import books from "../../Assets/books.png"
+import books from "../../Assets/snap-study.png"
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { NavLink} from 'react-router-dom';
 

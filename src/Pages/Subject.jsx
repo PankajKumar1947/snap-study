@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Fag from '../Component/Faqs/Fag'
+import Fag from '../Component/Faqs/Faq'
 import Social from '../Component/Cards/Social'
 import { useParams } from 'react-router-dom'
 import UploadedSoon from '../Component/Error/UploadedSoon'
