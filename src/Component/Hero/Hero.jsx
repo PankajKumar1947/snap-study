@@ -9,7 +9,7 @@ const Hero = () => {
     <div className="relative text-white">
       {/* Background Video */}
       <video
-        className="w-[100vw] h-[35vh] md:h-[80vh] object-cover"
+        className="w-[100vw] h-[30vh] md:h-[80vh] object-cover"
         autoPlay
         muted
         loop
