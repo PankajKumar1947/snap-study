@@ -4,7 +4,7 @@ import vision2 from "../../Assets/vision.jpg"
 
 const AboutDetails = () => {
   return (
-    <div className='text-white bg-gray-900 '>
+    <div className='text-white bg-gradient-to-r from-red-900/30 via-blue-900/30 to-black  '>
         <div className='px-[5%] py-6'>
             <h1 className='text-2xl sm:text-4xl font-bold'>About Us</h1>
             <div className='flex justify-between items-center flex-wrap-reverse text-sm sm:text-base  sm:gap-4'>

@@ -20,7 +20,7 @@ const Fag = ({elem}) => {
             <a href={elem[id]}>
                 <div 
                 onClick={setPyq}
-                className='text-xl sm:text-2xl flex justify-between items-center group cursor-pointer rounded-2xl sm:rounded-full bg-gray-600 hover:bg-gray-700 p-3 sm:p-6 sm:px-8 '>
+                className='text-xl sm:text-2xl flex justify-between items-center group cursor-pointer rounded-2xl sm:rounded-full bg-black backdrop-blur-2xl p-3 sm:p-6 sm:px-8 '>
                     <h2 className='group-hover:ml-4 duration-300 text-sm sm:text-2xl'>{elem.subject? elem.subject :elem.Ques}</h2>
                     <div className='sm:mr-5 group-hover:rotate-45 duration-300 text-2xl sm:text-5xl'>
                         <BsArrowRightCircle/>

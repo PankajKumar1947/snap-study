@@ -26,8 +26,8 @@ const News = () => {
         return <Spinner/>
     }
   return (
-    <div className=''>
-        <div className='w-[96%] md:w-[80%] mx-auto border-2 bg-gradient-to-r from-gray-600 to-gray-900 m-4 text-white rounded-2xl'>
+    <div className='bg-gradient-to-r from-[#200122] to-[#042253] -my-3'>
+        <div className='w-[96%] md:w-[80%] mx-auto border-2 bg-gradient-to-l from-[#200122] to-[#042253] m-4 text-white rounded-2xl'>
             <h1 className='text-center text-3xl font-semibold m-4 text-cyan-400'>Latest Notifications</h1>
             <hr />
 
@@ -42,7 +42,7 @@ const News = () => {
                             <a 
                             key={eachNews.id}
                             href={eachNews.file_path}
-                            className='bg-gray-500 p-2 px-4 rounded-full flex-1 hover:bg-gray-300 hover:text-black text-xs sm:text-lg'>
+                            className=' p-2 px-4 rounded-full bg-white/20 flex-1 hover:bg-gray-300 hover:text-black text-xs sm:text-lg'>
                                 <span className='text-black font-semibold'>{eachNews.notice_date}</span> : {truncatedTitle}
                             </a>
                         );

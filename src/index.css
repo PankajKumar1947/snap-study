@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 body{
-    background-color: #2d3748;
+    background-color:black;
 }
 
 ::-webkit-scrollbar{

@@ -3,8 +3,8 @@ import { FiArrowRightCircle } from "react-icons/fi";
 
 const ProductCard = ({elem}) => {
   return (
-    <div className='h-[170px] sm:h-[200px] border-[1px] rounded-3xl p-5 bg-gradient-to-r from-gray-600 to-gray-800 cursor-pointer hover:bg-gray-900 duration-300 group relative'>
-        <div className='text-xl font-bold  group-hover:text-indigo-400 group-hover:ml-2 duration-300'>
+    <div className='h-[170px] sm:h-[200px] border-[1px] rounded-3xl p-5  cursor-pointer backdrop-blur-lg bg-white/10 hover:bg-black/10 duration-300 group relative'>
+        <div className='text-xl font-bold text-yellow-200  group-hover:ml-2 duration-300'>
             <h1 className=''>{elem.title}</h1>     
         </div>
         

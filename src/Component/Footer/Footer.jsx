@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <div className='px-[5%] bg-gradient-to-b from-gray-700 to-gray-900  text-white'>
+    <div className='px-[5%] bg-gradient-to-b from-black to-gray-800  text-white'>
       <div className='pt-10 flex justify-between'>
         <h1 className='text-xl sm:text-3xl font-semibold '>Snap-Study</h1>
         <NavLink to={"/"}>
@@ -44,7 +44,7 @@ const Footer = () => {
       </div>
 
       <hr />
-      <p className='my-3 text-xs'>​© 2024 by Snap-Study. Created by <a className='text-red-600' href="https://github.com/PankajKumar1947">Pankaj Kumar</a> .</p>
+      <p className='my-3 text-xs sm:text-lg'>​© 2024 by Snap-Study. Created by <a className='text-red-600' href="https://github.com/PankajKumar1947">Pankaj Kumar</a> .</p>
       <hr />
     </div>
   )

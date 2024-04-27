@@ -8,7 +8,7 @@ const About = () => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div>
+    <div className='bg-gradient-to-r from-pink-900/30 via-black to-blue-800/30 '>
         <AboutDetails/>
         <Products/>
         <Team/>

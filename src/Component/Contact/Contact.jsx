@@ -47,7 +47,7 @@ const Contact = () => {
         </div>
         {/* right */}
         <div className='w-full sm:w-[60%] '>
-            <form className='mt-6 border-[1px] p-4 py-6 sm:p-8 rounded-2xl flex flex-col gap-5 bg-gradient-to-r from-gray-600 to-gray-800 text-white text-sm sm:text-base'>
+            <form className='mt-6 border-[1px] p-4 py-6 sm:p-8 rounded-2xl flex flex-col gap-5 bg-gradient-to-r from-black to-gray-800 text-white text-sm sm:text-base'>
                 <div className='flex justify-between '>
                     <div className='flex flex-col w-[40%] gap-2'>
                         <label htmlFor='firstname'>First Name</label>
