@@ -20,13 +20,13 @@ const About = () => {
         {/* images */}
         <div className='flex mx-3 gap-2 sm:gap-10 my-8'>
             <div className='sm:w-[220px] rounded-md overflow-hidden -mt-8'>
-                <img src={image1} alt="" />
+                <img src={image1} alt="snapstudy about" />
             </div>
             <div className='sm:w-[220px] rounded-md overflow-hidden'>
-                <img src={image2} alt="" />
+                <img src={image2} alt="snapstudy about1" />
             </div>
             <div className='sm:w-[220px] rounded-md overflow-hidden -mt-8'>
-                <img src={image3} alt="" />
+                <img src={image3} alt="snapstudy about2" />
             </div>
         </div>
     </div>

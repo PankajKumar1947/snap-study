@@ -20,7 +20,7 @@ const Donate = () => {
         </div>
         {/* right */}
         <div className='hidden md:w-[30%] sm:flex justify-center items-center '>
-            <img src={books} alt="" className='w-[90%] rounded-2xl'/>
+            <img src={books} alt="snapstudy makaut study material" className='w-[90%] rounded-2xl'/>
         </div>
     </div>
   )
