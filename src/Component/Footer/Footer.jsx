@@ -37,7 +37,7 @@ const Footer = () => {
       <br />
       <br /><br />
       <div className='text-2xl md:text-6xl flex gap-2 items-center' >
-        <a href='https://snapstudy.site' className='hover:text-gray-400' >snapstudy.site</a>
+        <a href='https://snapstudy-makaut.vercel.app/' className='hover:text-gray-400'>snapstudy-makaut</a>
         <div className='text-4xl md:text-8xl'>
           <GoArrowDownRight/>
         </div>    
