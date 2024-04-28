@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes} from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
 import About from "./Pages/About";
 import Course from "./Pages/Course";
 import Home from "./Pages/Home";
@@ -13,6 +14,9 @@ function App() {
   return (
     <>
       <div className=" bg-gray-800 font-mont">
+          <Helmet>
+            <meta name="description" content="snapstudy - get the latest makaut study material" />
+          </Helmet>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={
