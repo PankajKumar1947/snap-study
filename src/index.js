@@ -4,6 +4,7 @@ import App from "./App";
 import "./index.css";
 import { Analytics } from "@vercel/analytics/react";
 import { HelmetProvider } from 'react-helmet-async';
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -11,6 +12,7 @@ root.render(
     <HelmetProvider >
       <App />
       <Analytics/>
+      <SpeedInsights/>
     </HelmetProvider>
   </React.StrictMode>
 );
