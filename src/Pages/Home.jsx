@@ -13,7 +13,7 @@ const Home = () => {
     window.scroll(0,0);
   },[])
   return (
-    <div>
+    <div className='overflow-hidden'>
         <Hero/>
         <Products/>
         <About/>
