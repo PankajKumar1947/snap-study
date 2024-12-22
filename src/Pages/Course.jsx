@@ -75,7 +75,7 @@ const Course = () => {
         return <News />
 
     return (
-        <div className='text-white relative overflow-x-hidden bg-gradient-to-br from-indigo-900/40 via-gray-800 to-indigo-900 py-6 px-[4%]'>
+        <div className='text-white relative overflow-hidden bg-gradient-to-br from-indigo-900/40 via-gray-800 to-indigo-900 py-6 px-[4%]'>
             <div className="absolute top-0 left-0 w-72 h-72 bg-indigo-800 rounded-full  filter blur-xl opacity-30 "></div>
             <div className="absolute top-0 right-0 w-72 h-72 bg-indigo-800 rounded-full  filter blur-xl opacity-30 "></div>
             <div className="absolute -bottom-8 left-20 w-72 h-72 bg-indigo-800 rounded-full  filter blur-xl opacity-30 "></div>
