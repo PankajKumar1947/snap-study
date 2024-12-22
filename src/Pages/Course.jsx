@@ -76,7 +76,7 @@ const Course = () => {
 
   return (
     <div>
-        <div className='text-white bg-gradient-to-r from-[#200122] to-[#042253] py-6 px-[4%]'>
+        <div className='text-white bg-gradient-to-br from-indigo-900/40 via-gray-800 to-indigo-900 py-6 px-[4%]'>
             <h1 className='text-center text-2xl sm:text-3xl text-cyan-400 font-semibold'>Get Your <span>{id}</span> </h1>
             <div>
                 <h1 className='text-xl sm:text-4xl '>Select Your Branch</h1>

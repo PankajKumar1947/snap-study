@@ -1,33 +1,28 @@
-import React from 'react'
-import useGithub from '../../CustomHooks/useGithub'
+import React from 'react';
+import useGithub from '../../CustomHooks/useGithub';
+import DeveloperCard from './DeveloperCard';
 
 const Team = () => {
-    const {githubProfile} =useGithub("PankajKumar1947");
-    //console.log(githubProfile)
+    const { githubProfile } = useGithub("PankajKumar1947");
 
-  return (
-    <div className='text-white  flex justify-center flex-col items-center'>
-        <h1 className='text-center text-4xl font-semibold pt-8'>Developed by</h1>
-        <div className='my-10 mx-[8%] flex flex-wrap gap-7 justify-center items-center'>          
-            <div
-            className='border-[1px] rounded-md p-4 overflow-hidden bg-zinc-900'>
-                <div className='w-[250px]  rounded-tl-[40%] rounded-br-[50%]  rounded-xl overflow-hidden'>
-                    <img src={githubProfile?.avatar_url} alt="" className='' />
+    return (
+        <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-12 px-4">
+            <div className="max-w-7xl mx-auto">
+                <div className="text-center mb-12">
+                    <h1 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
+                        Designed and Devloped by
+                    </h1>
                 </div>
-                <h2 className='text-center mt-2'>{githubProfile?.name}</h2>
-                <div className='flex justify-evenly mt-2'>
-                    <a 
-                    href={githubProfile?.html_url}
-                    className='  bg-transparent border-[1px] hover:bg-white hover:text-black overflow-hidden  px-2 py-1  rounded-3xl'>Github</a>
-                    <a 
-                    href='https://www.linkedin.com/in/pankaj-kumar-5bbb44268/'
-                    className='  bg-transparent border-[1px] hover:bg-white hover:text-black overflow-hidden  px-2 py-1 rounded-3xl'>LinkedIn</a>
+
+                <div className="flex justify-center">
+                    <DeveloperCard
+                        profile={githubProfile}
+                        linkedinUrl="https://www.linkedin.com/in/pankaj-kumar-5bbb44268/"
+                    />
                 </div>
-            </div>     
-            
+            </div>
         </div>
-    </div>
-  )
-}
+    );
+};
 
-export default Team
+export default Team;

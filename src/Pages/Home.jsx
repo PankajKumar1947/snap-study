@@ -7,9 +7,6 @@ import Hero from "../Component/Hero/Hero";
 import Newsletter from "../Component/Newsletter/Newsletter";
 import Products from "../Component/Product/Products";
 import Team from "../Component/Team/Team";
-import Contributor from '../Component/Team/Contributor';
-import bg from '../Assets/bg/bg3.jpg'
-
 
 const Home = () => {
   useEffect(()=>{
@@ -23,14 +20,7 @@ const Home = () => {
         <Donate/>
         <Faqs/>
         <Contact/>
-        <div 
-        style={{ backgroundImage: `url(${bg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-        className='grid sm:grid-cols-2 bg-gray-900'>
-          <Team/>
-          <Contributor/>
-        </div>
-      
-        
+        <Team/>
         <Newsletter/>
     </div>
   )

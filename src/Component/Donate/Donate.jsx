@@ -5,7 +5,7 @@ import { NavLink} from 'react-router-dom';
 
 const Donate = () => {
   return (
-    <div className='text-white bg-gradient-to-l from-gray-600 to-gray-800 flex justify-center items-center w-full p-2 md:p-6 sm:py-6'>
+    <div className='text-white bg-gradient-to-br from-indigo-900/40 via-gray-800 to-indigo-900 flex justify-center items-center w-full p-2 md:p-6 sm:py-6'>
         {/* left */}
         <div className='sm:w-[50%] p-2 md:p-4 relative'>
             <h1 className='text-2xl sm:text-4xl sm:my-4'>​Become a member to our community by contributing</h1>

@@ -6,11 +6,11 @@ import Footer from './Footer/Footer'
 const Layout = () => {
   return (
     <>
-        <div className='sticky top-0 z-50'>
-        <Navbar/>
-        </div>
-        <Outlet/>
-        <Footer/>
+      <div className='sticky top-0 z-50'>
+        <Navbar />
+      </div>
+      <Outlet />
+      <Footer />
     </>
   )
 }
