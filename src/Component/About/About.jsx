@@ -6,7 +6,11 @@ import { NavLink } from 'react-router-dom'
 
 const About = () => {
     return (
-        <div className='flex flex-col gap-3 sm:gap-5 items-center justify-center text-white bg-gradient-to-tr from-indigo-900/50 via-gray-800 to-indigo-900 py-8 sm:py-16 px-4 sm:px-6 lg:px-8'>
+        <div className='relative flex flex-col gap-3 sm:gap-5 items-center justify-center text-white bg-gradient-to-tr from-indigo-900/50 via-gray-800 to-indigo-900 py-8 sm:py-16 px-4 sm:px-6 lg:px-8'>
+            <div className="absolute top-0 left-0 w-72 h-72 bg-indigo-800 rounded-full  filter blur-xl opacity-30 "></div>
+            <div className="absolute top-0 right-0 w-72 h-72 bg-indigo-800 rounded-full  filter blur-xl opacity-30 "></div>
+            <div className="absolute -bottom-8 left-20 w-72 h-72 bg-indigo-800 rounded-full  filter blur-xl opacity-30 "></div>
+            
             <h1 className='text-3xl sm:text-5xl font-bold mt-5 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400'>About Us</h1>
             <p className='font-light sm:text-xl max-w-3xl text-center text-gray-300 mb-6'>
                 Empowering Students Through Exam Preparation. We understand the stress and pressure students face leading up to exams. Finding relevant and organized study materials can be a time-consuming hassle. That's where SNAP-STUDY comes in!

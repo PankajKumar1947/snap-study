@@ -32,9 +32,9 @@ const Products = () => {
 
     return (
         <div className='relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-indigo-900 text-white py-12 sm:py-24 px-4 sm:px-6 lg:px-8'>
-            <div className="absolute top-0 left-0 w-72 h-72 bg-indigo-800 rounded-full  filter blur-xl opacity-30 animate-blob"></div>
-            <div className="absolute top-0 right-0 w-72 h-72 bg-indigo-800 rounded-full  filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
-            <div className="absolute -bottom-8 left-20 w-72 h-72 bg-indigo-800 rounded-full  filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
+            <div className="absolute top-0 left-0 w-72 h-72 bg-indigo-800 rounded-full  filter blur-xl opacity-30 "></div>
+            <div className="absolute top-0 right-0 w-72 h-72 bg-indigo-800 rounded-full  filter blur-xl opacity-30 "></div>
+            <div className="absolute -bottom-8 left-20 w-72 h-72 bg-indigo-800 rounded-full  filter blur-xl opacity-30 "></div>
 
             <div className='relative z-10 mx-auto'>
                 <div className='text-center mb-12'>

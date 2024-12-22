@@ -40,7 +40,11 @@ const Contact = () => {
     }, []);
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-indigo-900/40 via-gray-800 to-indigo-900 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen relative bg-gradient-to-br from-indigo-900/40 via-gray-800 to-indigo-900 py-12 px-4 sm:px-6 lg:px-8">
+            <div className="absolute top-0 left-0 w-72 h-72 bg-indigo-800 rounded-full  filter blur-xl opacity-30 "></div>
+            <div className="absolute top-0 right-0 w-72 h-72 bg-indigo-800 rounded-full  filter blur-xl opacity-30 "></div>
+            <div className="absolute -bottom-8 left-20 w-72 h-72 bg-indigo-800 rounded-full  filter blur-xl opacity-30 "></div>
+
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
                     <h1 className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 mb-4">

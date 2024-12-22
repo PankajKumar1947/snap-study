@@ -26,7 +26,13 @@ const News = () => {
         return <Spinner />
     }
     return (
-        <div className='bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 -my-3'>
+        <div className='bg-gradient-to-br relative from-gray-900 via-gray-800 to-gray-900 -my-3'>
+            <div className='hidden sm:block'>
+            <div className="absolute top-0 left-0 w-72 h-72 bg-indigo-800 rounded-full  filter blur-xl opacity-30 "></div>
+            <div className="absolute top-0 right-0 w-72 h-72 bg-indigo-800 rounded-full  filter blur-xl opacity-30 "></div>
+            <div className="absolute -bottom-8 left-20 w-72 h-72 bg-indigo-800 rounded-full  filter blur-xl opacity-30 "></div>
+
+            </div>
             <div className='w-[96%] md:w-[80%] mx-auto border-2  m-4 text-white rounded-2xl'>
                 <h1 className='text-center text-3xl font-semibold m-4 text-cyan-400'>Latest Notifications</h1>
                 <hr />
