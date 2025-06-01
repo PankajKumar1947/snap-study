@@ -13,9 +13,7 @@ import ContactSection from "@/components/contact-section"
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-violet-950 relative overflow-hidden">
-      <BackgroundEffects />
-      <Navigation />
+    <div className="">
       <HeroSection />
       <FeaturesSection />
       <HighlightsSection />
@@ -23,7 +21,6 @@ export default function HomePage() {
       <TestimonialsSection />
       <CTASection />
       <ContactSection />
-      <Footer />
     </div>
   )
 }
