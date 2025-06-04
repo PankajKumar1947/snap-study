@@ -4,8 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Computer, Smartphone, Zap, Bot, Wrench, Building, ArrowRight, BookOpen, Users, Star } from "lucide-react"
-import Navigation from "@/components/navigation"
-import BackgroundEffects from "@/components/background-effects"
+import { useParams } from "next/navigation"
 
 const branches = [
     {
@@ -150,6 +149,7 @@ const semesters = [
 export default function OrganiserPage() {
     const [selectedBranch, setSelectedBranch] = useState<string | null>(null)
     const [selectedSemester, setSelectedSemester] = useState<string | null>(null)
+    const choice = useParams().choice;
 
     const handleBranchSelect = (branchId: string) => {
         setSelectedBranch(branchId)
@@ -163,7 +163,7 @@ export default function OrganiserPage() {
     const handleProceed = () => {
         if (selectedBranch && selectedSemester) {
             // Navigate to the specific organiser page
-            window.location.href = `/organiser/${selectedBranch}/${selectedSemester}`
+            window.location.href = `${choice}/${selectedBranch}/${selectedSemester}`
         }
     }
 

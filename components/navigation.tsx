@@ -8,9 +8,9 @@ import Link from "next/link"
 const navMenu = [
     { name: "Home", route: "/" },
     { name: "Notice", route: "/news" },
-    { name: "Organiser", route: "choice/organiser" },
-    { name: "PYQ", route: "choice/pyq" },
-    { name: "Lectures", route: "choice/playlist" }
+    { name: "Organiser", route: "/choice/organiser" },
+    { name: "PYQ", route: "/choice/pyq" },
+    { name: "Lectures", route: "/choice/playlist" }
   ]
 
 export default function Navigation() {
