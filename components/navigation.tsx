@@ -5,6 +5,14 @@ import { Button } from "@/components/ui/button"
 import { Menu, Search, X } from "lucide-react"
 import Link from "next/link"
 
+const navMenu = [
+    { name: "Home", route: "/" },
+    { name: "Notice", route: "/news" },
+    { name: "Organiser", route: "choice/organiser" },
+    { name: "PYQ", route: "choice/pyq" },
+    { name: "Lectures", route: "choice/playlist" }
+  ]
+
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
@@ -29,13 +37,13 @@ export default function Navigation() {
           </div>
 
           <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-            {["Home", "Notice", "Organiser", "PYQ", "Lectures"].map((item, index) => (
+            {navMenu.map((item, index) => (
               <Link
-                key={item}
-                href="#"
+                key={item.name}
+                href={item.route}
                 className={`${index === 0 ? "text-white font-semibold" : "text-gray-300"} hover:text-violet-400 transition-all duration-300 font-medium text-sm xl:text-base relative group py-2`}
               >
-                {item}
+                {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-500 to-purple-500 transition-all duration-300 group-hover:w-full"></span>
                 {index === 0 && (
                   <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-violet-500 to-purple-500"></span>
