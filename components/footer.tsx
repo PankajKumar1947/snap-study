@@ -1,25 +1,50 @@
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+
 export default function Footer() {
   return (
-    <footer className="bg-black/40 backdrop-blur-2xl border-t border-violet-500/20 py-12 sm:py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="flex items-center space-x-2 sm:space-x-3 mb-4 sm:mb-6 md:mb-0">
-            <div className="relative">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-2xl shadow-violet-500/30">
-                <span className="text-white font-black text-lg sm:text-xl">S</span>
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl sm:rounded-2xl blur-lg opacity-50 -z-10"></div>
-              <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-xl sm:rounded-2xl"></div>
-            </div>
-            <div>
-              <span className="text-white font-black text-lg sm:text-xl">SnapStudy</span>
-              <div className="text-violet-400 text-xs">MAKAUT EDITION</div>
-            </div>
-          </div>
-          <p className="text-gray-400 text-center md:text-right font-light text-sm sm:text-base">
-            © 2024 SnapStudy. Empowering MAKAUT students to achieve excellence.
-          </p>
+    <footer className="bg-black/40 backdrop-blur-2xl border-t border-violet-500/20">
+      <div className='px-[5%]   text-white'>
+        <div className='pt-10 flex justify-between'>
+          <h1 className='text-xl sm:text-3xl font-semibold '>Snap-Study</h1>
+          {/* <Link href="/">
+            <img src={logo} alt="snap-study" className=' rounded-md h-[40px] sm:h-[50px] cursor-pointer' />
+          </Link> */}
         </div>
+
+        <div className='flex justify-between mt-5 text-sm sm:text-base'>
+          <div className="text-white">
+            <Link href="/">Home</Link>
+            <br />
+            <Link href={"/about"}>About</Link>
+          </div>
+          <div className='flex flex-col gap-2 '>
+            <a href="fb">Facebook</a>
+            <a href="fb">LinkedIn</a>
+            <a href="fb">Twitter</a>
+          </div>
+
+          <div className='flex flex-col '>
+            <p>Addresss</p>
+            <p>Address Code</p>
+          </div>
+          <div></div>
+          <div></div>
+
+        </div>
+
+        <br />
+        <br /><br />
+        <div className='text-2xl md:text-6xl flex gap-2 items-center' >
+          <a href='https://snapstudy-makaut.vercel.app/' className='hover:text-gray-400'>snapstudy-makaut</a>
+          <div className='text-4xl md:text-8xl'>
+            <ArrowRight />
+          </div>
+        </div>
+
+        <hr />
+        <p className='my-3 text-xs sm:text-lg'>​© 2024 by Snap-Study. Created by <a className='text-red-600' href="https://github.com/PankajKumar1947">Pankaj Kumar</a> .</p>
+        <hr />
       </div>
     </footer>
   )
