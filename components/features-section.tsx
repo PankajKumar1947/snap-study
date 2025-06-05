@@ -1,11 +1,12 @@
-import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { FileText, GraduationCap, ArrowRight, CalendarHeart, Book } from "lucide-react"
+import Link from "next/link"
 
 const features = [
   {
     title: "Latest News and Updates",
     description:"Get the latest news and updates from MAKAUT, including important announcements and events.",
+    link: "/news",
     icon: CalendarHeart,
     badge: "News",
     gradient: "from-violet-500/10 via-violet-600/5 to-transparent",
@@ -16,6 +17,7 @@ const features = [
   {
     title: "Chapter Wise Youtube Lectures",
     description: "Engaging and informative lectures delivered by top instructors on a wide range of topics for all chapters. ",
+    link: "/choice/playlist",
     icon: GraduationCap,
     badge: "Youtube",
     gradient: "from-purple-500/10 via-purple-600/5 to-transparent",
@@ -25,8 +27,8 @@ const features = [
   },
   {
     title: "Previous Year Questions",
-    description:
-      "Access comprehensive solved PYQs from the last 10 years with detailed step-by-step explanations and expert insights",
+    description:"Access comprehensive solved PYQs from the last 10 years with detailed step-by-step explanations and expert insights",
+    link: "/choice/pyqs",
     icon: FileText,
     badge: "PYQs",
     gradient: "from-violet-500/10 via-violet-600/5 to-transparent",
@@ -37,6 +39,7 @@ const features = [
   {
     title: "Makaut Organisers",
     description: "Access PDFs of organisers for all the semesters of all the branches of MAKAUT",
+    link: "/choice/organisers",
     icon: Book,
     badge: "PDFs",
     gradient: "from-indigo-500/10 via-indigo-600/5 to-transparent",
@@ -62,19 +65,15 @@ export default function FeaturesSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {features.map((feature, index) => (
             <div key={index} className="group">
-              {/* Glass Card with Enhanced Effects */}
               <div
                 className={`relative bg-black/20 backdrop-blur-2xl border border-violet-500/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-violet-400/40 transition-all duration-500 hover:scale-105 shadow-2xl shadow-violet-500/10 hover:shadow-violet-500/20 overflow-hidden`}
               >
-                {/* Glass reflection effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent rounded-2xl sm:rounded-3xl"></div>
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
                 <div className="absolute top-0 left-0 h-full w-px bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
 
                 {/* Background gradient */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} rounded-2xl sm:rounded-3xl opacity-50 group-hover:opacity-70 transition-opacity duration-500`}
-                ></div>
+                <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} rounded-2xl sm:rounded-3xl opacity-50 group-hover:opacity-70 transition-opacity duration-500`}></div>
 
                 <div className="relative z-10">
                   <div className="flex items-center justify-between mb-4 sm:mb-6">
@@ -110,13 +109,12 @@ export default function FeaturesSection() {
                       </div>
                       <div className="text-gray-400 text-xs sm:text-sm">{feature.label}</div>
                     </div>
-                    <Button
-                      variant="ghost"
-                      className={`text-${feature.accentColor}-400 hover:text-${feature.accentColor}-300 hover:bg-${feature.accentColor}-500/10 font-semibold group/btn text-sm sm:text-base`}
+                    <Link href={feature.link}
+                      className={`text-violet-500 hover:text-violet-800 font-semibold group/btn text-sm sm:text-base flex justify-between gap-x-4 items-center px-4 py-2 rounded-3xl overflow-hidden`}
                     >
                       Learn More
                       <ArrowRight className="ml-1 sm:ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover/btn:translate-x-1 transition-transform" />
-                    </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
