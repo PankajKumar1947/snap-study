@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
 import { Computer, Smartphone, Zap, Bot, Wrench, Building, ArrowRight, BookOpen, Users, Star } from "lucide-react"
 import { useParams } from "next/navigation"
 
@@ -13,7 +12,7 @@ const branches = [
         fullName: "Computer Science Engineering",
         description: "Software development, algorithms, and programming",
         icon: Computer,
-        image: "/placeholder.svg?height=200&width=300",
+        image: "/branch/cse_img.jpg",
         students: "12,500+",
         materials: "2,800+",
         gradient: "from-violet-500/20 to-violet-600/10",
@@ -26,7 +25,7 @@ const branches = [
         fullName: "Information Technology",
         description: "Network systems, databases, and IT infrastructure",
         icon: Smartphone,
-        image: "/placeholder.svg?height=200&width=300",
+        image: "/branch/it_img.jpg",
         students: "8,200+",
         materials: "2,100+",
         gradient: "from-purple-500/20 to-purple-600/10",
@@ -39,7 +38,7 @@ const branches = [
         fullName: "Electronics & Communication",
         description: "Circuit design, communication systems, and electronics",
         icon: Zap,
-        image: "/placeholder.svg?height=200&width=300",
+        image: "/branch/ece_img.jpg",
         students: "9,800+",
         materials: "2,400+",
         gradient: "from-indigo-500/20 to-indigo-600/10",
@@ -52,7 +51,7 @@ const branches = [
         fullName: "AI & Machine Learning",
         description: "Artificial intelligence, ML algorithms, and data science",
         icon: Bot,
-        image: "/placeholder.svg?height=200&width=300",
+        image: "/branch/aiml_img.jpg",
         students: "6,500+",
         materials: "1,900+",
         gradient: "from-violet-600/20 to-violet-700/10",
@@ -65,7 +64,7 @@ const branches = [
         fullName: "Mechanical Engineering",
         description: "Mechanical systems, thermodynamics, and manufacturing",
         icon: Wrench,
-        image: "/placeholder.svg?height=200&width=300",
+        image: "/branch/mech_img.jpg",
         students: "7,300+",
         materials: "2,200+",
         gradient: "from-purple-600/20 to-purple-700/10",
@@ -78,7 +77,7 @@ const branches = [
         fullName: "Civil Engineering",
         description: "Construction, structural design, and infrastructure",
         icon: Building,
-        image: "/placeholder.svg?height=200&width=300",
+        image: "/branch/civil_img.jpg",
         students: "8,900+",
         materials: "2,300+",
         gradient: "from-indigo-600/20 to-indigo-700/10",
@@ -153,24 +152,18 @@ export default function OrganiserPage() {
 
     const handleBranchSelect = (branchId: string) => {
         setSelectedBranch(branchId)
-        setSelectedSemester(null) // Reset semester when branch changes
+        setSelectedSemester(null)
+        window.scrollTo({ top: 1200, behavior: "smooth" })
     }
 
     const handleSemesterSelect = (semesterId: string) => {
         setSelectedSemester(semesterId)
-    }
-
-    const handleProceed = () => {
-        if (selectedBranch && selectedSemester) {
-            // Navigate to the specific organiser page
-            window.location.href = `${choice}/${selectedBranch}/${selectedSemester}`
-        }
+        window.location.href = `${choice}/${selectedBranch}/${selectedSemester}`
     }
 
     return (
         <div className="relative z-10 pt-8 sm:pt-12 pb-16 sm:pb-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Header */}
                 <div className="text-center mb-12 sm:mb-16">
                     <div className="inline-flex items-center mb-4 sm:mb-6 bg-black/30 backdrop-blur-2xl border border-violet-500/30 rounded-full px-4 sm:px-6 py-2 sm:py-3 shadow-2xl shadow-violet-500/10">
                         <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-violet-400" />
@@ -209,18 +202,6 @@ export default function OrganiserPage() {
                                         className={`absolute inset-0 bg-gradient-to-br ${branch.gradient} rounded-2xl sm:rounded-3xl opacity-50 group-hover:opacity-70 transition-opacity duration-500`}
                                     ></div>
 
-                                    <div className="relative z-10">
-                                        {/* Popular Badge */}
-                                        {branch.popular && (
-                                            <div className="absolute -top-2 -right-2">
-                                                <Badge className="bg-gradient-to-r from-violet-500/80 to-violet-600/80 text-white border border-violet-400/30 font-bold">
-                                                    <Star className="w-3 h-3 mr-1 fill-current" />
-                                                    Popular
-                                                </Badge>
-                                            </div>
-                                        )}
-
-                                        {/* Branch Image */}
                                         <div className="relative mb-6 overflow-hidden rounded-xl">
                                             <img
                                                 src={branch.image || "/placeholder.svg"}
@@ -237,31 +218,11 @@ export default function OrganiserPage() {
                                             </div>
                                         </div>
 
-                                        {/* Branch Info */}
                                         <div className="text-center">
                                             <h3 className="text-white text-xl sm:text-2xl font-black mb-2">{branch.name}</h3>
                                             <h4 className="text-violet-400 text-sm sm:text-base font-semibold mb-3">{branch.fullName}</h4>
                                             <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mb-4">{branch.description}</p>
 
-                                            {/* Stats */}
-                                            <div className="flex justify-between items-center mb-4">
-                                                <div className="text-center">
-                                                    <div className="flex items-center text-violet-400 text-xs">
-                                                        <Users className="w-3 h-3 mr-1" />
-                                                        <span>{branch.students}</span>
-                                                    </div>
-                                                    <div className="text-gray-500 text-xs">Students</div>
-                                                </div>
-                                                <div className="text-center">
-                                                    <div className="flex items-center text-purple-400 text-xs">
-                                                        <BookOpen className="w-3 h-3 mr-1" />
-                                                        <span>{branch.materials}</span>
-                                                    </div>
-                                                    <div className="text-gray-500 text-xs">Materials</div>
-                                                </div>
-                                            </div>
-
-                                            {/* Select Button */}
                                             <Button
                                                 className={`w-full transition-all duration-300 ${selectedBranch === branch.id
                                                     ? "bg-gradient-to-r from-violet-500 to-purple-600 text-white"
@@ -273,7 +234,6 @@ export default function OrganiserPage() {
                                             </Button>
                                         </div>
                                     </div>
-                                </div>
                             </div>
                         ))}
                     </div>
@@ -308,7 +268,7 @@ export default function OrganiserPage() {
                                             <Button
                                                 className={`w-full text-sm transition-all duration-300 ${selectedSemester === semester.id
                                                     ? "bg-gradient-to-r from-violet-500 to-purple-600 text-white"
-                                                    : "bg-black/30 border border-violet-500/30 text-violet-400 hover:bg-violet-500/10"
+                                                    : "bg-black/30 border border-violet-500/30 text-white hover:bg-violet-500/50"
                                                     }`}
                                                 variant={selectedSemester === semester.id ? "default" : "outline"}
                                             >
@@ -318,31 +278,6 @@ export default function OrganiserPage() {
                                     </div>
                                 </div>
                             ))}
-                        </div>
-                    </div>
-                )}
-
-                {/* Proceed Button */}
-                {selectedBranch && selectedSemester && (
-                    <div className="text-center">
-                        <div className="relative inline-block">
-                            <div className="bg-black/20 backdrop-blur-2xl border border-violet-500/30 rounded-2xl p-6 sm:p-8 shadow-2xl shadow-violet-500/20">
-                                <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent rounded-2xl"></div>
-                                <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-transparent to-purple-600/10 rounded-2xl"></div>
-
-                                <div className="relative z-10">
-                                    <p className="text-gray-300 text-sm sm:text-base mb-4">
-                                        Ready to access your personalized study organiser?
-                                    </p>
-                                    <Button
-                                        onClick={handleProceed}
-                                        className="group bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white px-8 sm:px-12 py-3 sm:py-4 text-base sm:text-lg font-bold rounded-xl shadow-2xl shadow-violet-500/30 hover:shadow-violet-500/50 transition-all duration-300 hover:scale-105 border border-violet-400/20"
-                                    >
-                                        Access My Organiser
-                                        <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                                    </Button>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 )}
