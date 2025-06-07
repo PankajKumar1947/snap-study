@@ -1,107 +1,51 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { BookOpen, Search, Grid } from "lucide-react"
 import { useParams } from "next/navigation"
-// Mock data for CSE Semester 1
-const subjects = [
-    {
-        id: "math1",
-        name: "Engineering Mathematics I",
-        code: "MA101",
-        credits: 4,
-        materials: 45,
-        videos: 12,
-        assignments: 8,
-        progress: 75,
-        difficulty: "Medium",
-        instructor: "Dr. Rajesh Kumar",
-        lastUpdated: "2 days ago",
-        popular: true,
-    },
-    {
-        id: "physics",
-        name: "Engineering Physics",
-        code: "PH101",
-        credits: 3,
-        materials: 38,
-        videos: 15,
-        assignments: 6,
-        progress: 60,
-        difficulty: "Hard",
-        instructor: "Prof. Anita Sharma",
-        lastUpdated: "1 day ago",
-        popular: false,
-    },
-    {
-        id: "chemistry",
-        name: "Engineering Chemistry",
-        code: "CH101",
-        credits: 3,
-        materials: 32,
-        videos: 10,
-        assignments: 5,
-        progress: 85,
-        difficulty: "Easy",
-        instructor: "Dr. Suresh Patel",
-        lastUpdated: "3 days ago",
-        popular: false,
-    },
-    {
-        id: "programming",
-        name: "Programming Fundamentals",
-        code: "CS101",
-        credits: 4,
-        materials: 52,
-        videos: 20,
-        assignments: 12,
-        progress: 90,
-        difficulty: "Medium",
-        instructor: "Prof. Priya Singh",
-        lastUpdated: "1 day ago",
-        popular: true,
-    },
-    {
-        id: "english",
-        name: "Technical English",
-        code: "EN101",
-        credits: 2,
-        materials: 25,
-        videos: 8,
-        assignments: 4,
-        progress: 95,
-        difficulty: "Easy",
-        instructor: "Ms. Sarah Johnson",
-        lastUpdated: "4 days ago",
-        popular: false,
-    },
-    {
-        id: "workshop",
-        name: "Workshop Practice",
-        code: "WS101",
-        credits: 2,
-        materials: 18,
-        videos: 6,
-        assignments: 3,
-        progress: 40,
-        difficulty: "Medium",
-        instructor: "Mr. Ravi Mehta",
-        lastUpdated: "5 days ago",
-        popular: false,
-    },
-]
+
+interface Subject {
+    subject: string;
+    code: string;
+    organiser: string;
+    pyqs: [];
+    playlist: [];
+}
 
 export default function OrganiserDetailPage() {
-    const [searchTerm, setSearchTerm] = useState("")
+    const [searchTerm, setSearchTerm] = useState("");
+    const [loading, setLoading] = useState(true);
+    const [subjects, setSubjects] = useState<Subject[]>([]);
 
+    const choice = useParams().choice
     const branchName = useParams().branch
     const semesterName = useParams().semester
+
+    const url=process.env.NEXT_PUBLIC_BASE_URL!+"/"+branchName+`.json`;
+
+    useEffect(()=>{
+        const fetchData=async()=>{
+            try{
+                const response=await fetch(url);
+                const result= await response.json();
+                //@ts-ignore
+                setSubjects(result[semesterName]);
+            }
+            catch(err){
+                console.log("Can't fetch the data");
+            }
+            finally{
+                setLoading(false);
+            }
+        }
+        fetchData();
+        window.scroll(0,0);
+    },[])
 
     return (
         <div className="relative z-10 pt-8 sm:pt-12 pb-16 sm:pb-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
                     <div className="text-center mb-8 sm:mb-12">
                         <div className="inline-flex items-center mb-4 bg-black/30 backdrop-blur-2xl border border-violet-500/30 rounded-full px-4 sm:px-6 py-2 sm:py-3 shadow-2xl shadow-violet-500/10">
                             <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-violet-400" />
@@ -148,23 +92,24 @@ export default function OrganiserDetailPage() {
                 <div className="mb-8 sm:mb-12">
                     <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8">Your Subjects</h2>
                     <div className={"grid sm:grid-cols-2 gap-6"}>
-                        {subjects.map((subject) => (
-                            <div key={subject.id} className="group">
+                        {subjects.length > 0 && subjects.map((subject,ind:number) => (
+                            <div key={ind} className="group">
                                 <div className="relative bg-black/20 backdrop-blur-2xl border border-violet-500/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-violet-400/40 transition-all duration-500 hover:scale-105 shadow-2xl shadow-violet-500/10 overflow-hidden">
                                     {/* Glass effects */}
                                     <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent rounded-2xl sm:rounded-3xl"></div>
                                     <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-transparent to-purple-600/10 rounded-2xl sm:rounded-3xl opacity-50"></div>
 
-                                    <h3 className="text-white text-lg font-bold">{subject.name}</h3>
+                                    <h3 className="text-white text-lg font-bold">{subject.subject}</h3>
                                     <div className="flex items-center gap-2 justify-between">
                                         <p className="text-violet-400 text-sm font-medium">
-                                            {subject.code} • {subject.credits} Credits
+                                            {subject.code} • 3 Credits
                                         </p>
-                                        <div>
-                                            <Button className="flex-1 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white text-sm">
+                                        <div className="z-10">
+                                            {/* @ts-ignore */}
+                                            <a href={subject[choice]} target="_blank" className="flex-1 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white text-sm px-4 py-2 rounded-lg flex items-center">
                                                 <BookOpen className="w-4 h-4 mr-2" />
                                                 Study Now
-                                            </Button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

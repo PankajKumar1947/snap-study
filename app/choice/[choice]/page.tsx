@@ -164,8 +164,7 @@ export default function OrganiserPage() {
     }
 
     const handleSemesterSelect = (semesterId: string) => {
-        setSelectedSemester(semesterId)
-        window.location.href = `${choice}/${selectedBranch}/${selectedSemester}`
+        window.location.href = `${choice}/${selectedBranch}/${semesterId}`
     }
 
     return (
