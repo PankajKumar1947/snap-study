@@ -5,24 +5,36 @@ import { Button } from "@/components/ui/button"
 import { BookOpen, Search, Grid } from "lucide-react"
 import { useParams } from "next/navigation"
 import UploadingSoon from "@/components/uploading-soon"
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 
 interface Subject {
     subject: string;
     code: string;
     organiser: string;
-    pyqs: [];
+    pyqLink: [];
     playlist: [];
+}
+
+interface PyqLink {
+    year: number;
+    link: string;
+}
+
+function convertToArray(pyqData: PyqLink) {
+    const year = parseInt(Object.keys(pyqData)[0]);
+    const link = Object.values(pyqData)[0];
+    return [year, link];
+
 }
 
 export default function OrganiserDetailPage() {
     const [searchTerm, setSearchTerm] = useState("");
     const [loading, setLoading] = useState(true);
     const [subjects, setSubjects] = useState<Subject[]>([]);
-
+    const [filteredSubjects, setFilteredSubjects] = useState<Subject[]>([]);
     const choice = useParams().choice
     const branchName = useParams().branch
     const semesterName = useParams().semester
-
     const url = process.env.NEXT_PUBLIC_BASE_URL! + "/" + branchName + `.json`;
 
     useEffect(() => {
@@ -43,6 +55,13 @@ export default function OrganiserDetailPage() {
         fetchData();
         window.scroll(0, 0);
     }, [])
+
+    useEffect(() => {
+        const filtered = subjects.filter((subject) => {
+            return subject.subject.toLowerCase().includes(searchTerm.toLowerCase());
+        });
+        setFilteredSubjects(filtered);
+    }, [searchTerm, subjects]);
 
     return (
         <div className="relative z-10 pt-8 sm:pt-12 pb-16 sm:pb-20">
@@ -95,7 +114,7 @@ export default function OrganiserDetailPage() {
                     {subjects?.length === 0 ? <UploadingSoon /> :
                         <div className={"grid sm:grid-cols-2 gap-6"}>
                             {
-                                subjects?.map((subject, ind: number) => (
+                                filteredSubjects?.map((subject, ind: number) => (
                                     <div key={ind} className="group">
                                         <div className="relative bg-black/20 backdrop-blur-2xl border border-violet-500/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-violet-400/40 transition-all duration-500 hover:scale-105 shadow-2xl shadow-violet-500/10 overflow-hidden">
                                             {/* Glass effects */}
@@ -108,11 +127,46 @@ export default function OrganiserDetailPage() {
                                                     {subject.code} • 3 Credits
                                                 </p>
                                                 <div className="z-10">
-                                                    {/* @ts-ignore */}
-                                                    <a href={subject[choice]} target="_blank" className="flex-1 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white text-sm px-4 py-2 rounded-lg flex items-center">
-                                                        <BookOpen className="w-4 h-4 mr-2" />
-                                                        Study Now
-                                                    </a>
+                                                    {
+                                                        choice === "pyq" ?
+                                                            <Dialog>
+                                                                <DialogTrigger className="flex-1 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white text-sm px-4 py-2 rounded-lg flex items-center">
+                                                                    <BookOpen className="w-4 h-4 mr-2" />
+                                                                    View PYQs</DialogTrigger>
+                                                                <DialogContent className="bg-voilet-500/30 text-white max-w-4xl backdrop-blur-2xl">
+                                                                    <DialogHeader>
+                                                                        <DialogTitle className="text-2xl text-center">Previous Year Questions</DialogTitle>
+                                                                        <DialogDescription>
+                                                                            {
+                                                                                subject.pyqLink.length > 0 && subject?.pyqLink.map((pyq, ind) => (
+                                                                                    <div key={ind} className="bg-white/10 border border-violet-500/30 rounded-lg px-4 py-2 text-lg font-semibold text-violet-400 my-2 flex justify-between items-center">
+                                                                                        <div>
+                                                                                            {convertToArray(pyq)[0]}
+                                                                                        </div>
+
+                                                                                        <div>
+                                                                                            {/* @ts-ignore */}
+                                                                                            <a href={convertToArray(pyq)[1]} target="_blank" className="flex-1 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white text-sm px-4 py-2 rounded-lg flex items-center">
+                                                                                                <BookOpen className="w-4 h-4 mr-2" />
+                                                                                                Study Now
+                                                                                            </a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                ))
+                                                                            }
+                                                                        </DialogDescription>
+                                                                    </DialogHeader>
+                                                                </DialogContent>
+                                                            </Dialog>
+                                                            :
+                                                            <>
+                                                                {/* @ts-ignore */}
+                                                                <a href={subject[choice]} target="_blank" className="flex-1 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white text-sm px-4 py-2 rounded-lg flex items-center">
+                                                                    <BookOpen className="w-4 h-4 mr-2" />
+                                                                    Study Now
+                                                                </a>
+                                                            </>
+                                                    }
                                                 </div>
                                             </div>
                                         </div>
@@ -122,7 +176,6 @@ export default function OrganiserDetailPage() {
                         </div>
                     }
                 </div>
-
             </div>
         </div>
     )
