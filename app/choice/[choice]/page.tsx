@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Computer, Smartphone, Zap, Bot, Wrench, Building, ArrowRight, BookOpen, Users, Star } from "lucide-react"
+import { Computer, Smartphone, Zap, Bot, Wrench, Building, BookOpen } from "lucide-react"
 import { useParams } from "next/navigation"
 
 const branches = [
@@ -145,10 +145,17 @@ const semesters = [
     },
 ]
 
+const choices = {
+    "organiser": "Organiser",
+    "pyq": "Previous Year Questions",
+    "playlist": "Youtube Lectures"
+}
+
 export default function OrganiserPage() {
     const [selectedBranch, setSelectedBranch] = useState<string | null>(null)
     const [selectedSemester, setSelectedSemester] = useState<string | null>(null)
     const choice = useParams().choice;
+    console.log(choice);
 
     const handleBranchSelect = (branchId: string) => {
         setSelectedBranch(branchId)
@@ -172,7 +179,8 @@ export default function OrganiserPage() {
                     <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 sm:mb-6">
                         Get Your{" "}
                         <span className="bg-gradient-to-r from-violet-400 via-violet-500 to-purple-500 bg-clip-text text-transparent">
-                            Organiser
+                            {/* @ts-ignore */}
+                            {choices[choice]}
                         </span>
                     </h1>
                     <p className="text-gray-400 text-base sm:text-lg max-w-3xl mx-auto font-light leading-relaxed">
