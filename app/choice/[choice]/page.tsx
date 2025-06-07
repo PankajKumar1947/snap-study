@@ -155,7 +155,6 @@ export default function OrganiserPage() {
     const [selectedBranch, setSelectedBranch] = useState<string | null>(null)
     const [selectedSemester, setSelectedSemester] = useState<string | null>(null)
     const choice = useParams().choice;
-    console.log(choice);
 
     const handleBranchSelect = (branchId: string) => {
         setSelectedBranch(branchId)

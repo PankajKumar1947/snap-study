@@ -4,17 +4,18 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, Search, X } from "lucide-react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 const navMenu = [
-    { name: "Home", route: "/" },
-    { name: "Notice", route: "/news" },
-    { name: "Organiser", route: "/choice/organiser" },
-    { name: "PYQ", route: "/choice/pyq" },
-    { name: "Lectures", route: "/choice/playlist" }
-  ]
+  { name: "Notice", route: "/news" },
+  { name: "Organiser", route: "/choice/organiser" },
+  { name: "PYQ", route: "/choice/pyq" },
+  { name: "Lectures", route: "/choice/playlist" }
+]
 
 export default function Navigation() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const url = usePathname();
 
   return (
     <nav className="sticky top-0 z-50 bg-black/20 backdrop-blur-2xl border-b border-violet-500/20 shadow-2xl shadow-violet-500/5">
@@ -37,6 +38,16 @@ export default function Navigation() {
           </div>
 
           <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+            <Link
+                href={"/"}
+                className={`text-gray-300 hover:text-violet-400 transition-all duration-300 font-medium text-sm xl:text-base relative group py-2`}
+              >
+                Home
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-500 to-purple-500 transition-all duration-300 group-hover:w-full"></span>
+                {url === "/" && (
+                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-violet-500 to-purple-500"></span>
+                )}
+              </Link>
             {navMenu.map((item, index) => (
               <Link
                 key={item.name}
@@ -45,7 +56,7 @@ export default function Navigation() {
               >
                 {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-500 to-purple-500 transition-all duration-300 group-hover:w-full"></span>
-                {index === 0 && (
+                {url.includes(item.route) && (
                   <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-violet-500 to-purple-500"></span>
                 )}
               </Link>
